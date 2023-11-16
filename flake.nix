@@ -15,6 +15,7 @@
           import nixpkgs {
             inherit system;
             config.allowUnfree = true;
+            config.android_sdk.accept_license = true;
             overlays = [
               nixpkgs-friendly-overlay.overlays.default
             ];
@@ -26,7 +27,7 @@
     {
     #   packages = usePkgs (pkgs: rec {
     #     # pkgsDebug = pkgs; # Useful for building anything from pkgs, including nixpkgs-friendly-overlay
-    #     default = pkgs.callPackage ./android-env.nix { inherit pkgs; };      
+    #     default = pkgs.callPackage ./android-env.nix { inherit pkgs; };
     #   });
 
       devShells = usePkgs (pkgs: {
